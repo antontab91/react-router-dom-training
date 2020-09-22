@@ -1,7 +1,9 @@
 import React from "react";
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
 import Home from './Home';
 import Contact from './Contact';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import BrowseUsers from './BrowseUsers';
+import UserProfile from './UserProfile';
 
 const App = () => {
 
@@ -26,8 +28,11 @@ const App = () => {
         <Route path='/contact'>
           <Contact />
         </Route>
-        <Route path='/users:userId'>
-          <Contact />
+        <Route exact path='/users'>
+          <BrowseUsers />
+        </Route>
+        <Route path='/users/:userId' component={UserProfile}>
+          {/* <UserProfile /> */}
         </Route>
       </Switch>
     </BrowserRouter>
