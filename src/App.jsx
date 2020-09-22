@@ -28,7 +28,7 @@ const App = () => {
         <Route path='/contact'>
           <Contact />
         </Route>
-        <Route exact path='/users'>
+        <Route exact path='/users'>                 {/* тут отрисовуется список ссылок  */}
           <BrowseUsers />
         </Route>
         <Route path='/users/:userId' component={UserProfile}>
